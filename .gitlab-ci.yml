@@ -1,0 +1,26 @@
+stages:
+  - build
+  - deploy
+
+docker:
+  stage: build
+  tags:
+  - minikube
+  script:
+    - ls
+    - docker login --username=anjreddy --password=Adiyog!@112
+    - docker build -t anjreddy/ecomm:latest .
+    - docker push anjreddy/ecomm:latest
+  rules:
+    - when: manual
+
+
+deploy-prod:
+  stage: deploy
+  tags:
+  - minikube
+  only:
+    - master
+  script: 
+    - echo 1234 | sudo -S kubectl apply -f Deployment.yml
+  
