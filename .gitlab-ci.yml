@@ -5,7 +5,7 @@ stages:
 docker:
   stage: build
   tags:
-  - minikube
+  - ecomm
   script:
     - ls
     - docker login --username=anjreddy --password=Adiyog!@112
@@ -18,7 +18,7 @@ docker:
 deploy-prod:
   stage: deploy
   tags:
-  - minikube
+  - ecomm
   only:
     - master
   script: 
