@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ecomm
+  name: ecomm-dev
   labels:
-    app: ecomm
+    app: ecomm-dev
 spec:
   selector:
     matchLabels:
-      app: ecomm
+      app: ecomm-dev
   template:
     metadata:
       labels:
-        app: ecomm
+        app: ecomm-dev
     spec:
       containers:
-      - name: ecomm
-        image: anjreddy/ecomm:latest
+      - name: ecomm-dev
+        image: anjreddy/ecomm:dev
         ports:
         - containerPort: 80
          
@@ -24,11 +24,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ecomm
+  name: ecomm-dev
 spec:
   type: NodePort
   ports:
-    - port: 80
+    - port: 25
       targetPort: 80
   selector:
-    app: ecomm
+    app: ecomm-dev
