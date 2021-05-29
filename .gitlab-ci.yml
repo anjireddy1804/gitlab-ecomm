@@ -9,8 +9,8 @@ docker:
   script:
     - ls
     - docker login --username=anjreddy --password=Adiyog!@112
-    - docker build -t anjreddy/ecomm:latest .
-    - docker push anjreddy/ecomm:latest
+    - docker build -t anjreddy/ecomm:dev .
+    - docker push anjreddy/ecomm:dev
   rules:
     - when: manual
 
