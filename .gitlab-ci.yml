@@ -8,9 +8,9 @@ docker:
   - ecomm
   script:
     - ls
-    - docker login --username=$dockerusername --password=$dockerpassword
-    - docker build -t anjreddy/ecomm:$version .
-    - docker push anjreddy/ecomm:$version
+    - docker login registry.gitlab.com --username=$gitlabdockerusername --password=$gitlabdockerpassword
+    - docker build -t registry.gitlab.com/anjireddy1804/ecomm:$version .
+    - docker push registry.gitlab.com/anjireddy1804/ecomm:$version
   rules:
     - when: manual
 

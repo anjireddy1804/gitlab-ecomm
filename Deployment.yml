@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: ecomm
-        image: anjreddy/ecomm:"($version)"
+        image: registry.gitlab.com/anjireddy1804/ecomm:${version}
         ports:
         - containerPort: 80
          
