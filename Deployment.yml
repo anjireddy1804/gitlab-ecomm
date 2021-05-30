@@ -33,7 +33,8 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - port: 80
+    - nodePort: 30330
+      port: 80
       targetPort: 80
   selector:
     app: ecomm
