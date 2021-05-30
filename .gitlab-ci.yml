@@ -8,9 +8,9 @@ docker:
   - ecomm
   script:
     - ls
-    - docker login --username=anjreddy --password=Adiyog!@112
-    - docker build -t anjreddy/ecomm:latest .
-    - docker push anjreddy/ecomm:latest
+    - docker login --username=$dockerusername --password=$dockerpassword
+    - docker build -t anjreddy/ecomm:$version .
+    - docker push anjreddy/ecomm:$version
   rules:
     - when: manual
 
@@ -22,5 +22,5 @@ deploy-prod:
   only:
     - master
   script: 
-    - echo 1234 | sudo -S kubectl apply -f Deployment.yml
+    - echo $gitlabpassword | sudo -S kubectl apply -f Deployment.yml
   
