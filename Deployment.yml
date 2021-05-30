@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: ecomm
-        image: anjreddy/ecomm:"{$version}"
+        image: anjreddy/ecomm:"($version)"
         ports:
         - containerPort: 80
          
