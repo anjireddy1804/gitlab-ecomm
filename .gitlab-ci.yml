@@ -22,5 +22,5 @@ deploy-prod:
   only:
     - master
   script: 
-    - echo $gitlabpassword | sudo -S kubectl apply -f Deployment.yml
+    - kubectl apply -f Deployment.yml
   
