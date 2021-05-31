@@ -5,7 +5,7 @@ stages:
 docker:
   stage: build
   tags:
-  - ecomm
+  - ecomm-2
   script:
     - ls
     - docker login registry.gitlab.com --username=$gitlabdockerusername --password=$gitlabdockerpassword
@@ -18,7 +18,7 @@ docker:
 deploy-prod:
   stage: deploy
   tags:
-  - ecomm
+  - ecomm-2
   only:
     - master
   script: 
